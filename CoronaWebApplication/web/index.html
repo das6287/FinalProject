@@ -6,11 +6,86 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Coronavirus Info</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>TODO write content</div>
+        <div>
+            <h1><center>Covid-19 Coronavirus Information</center></h1>
+             <table border="0">
+                <tbody>
+                    <tr>
+                <input type="radio" name="Rates" value="Infection Rate" />
+                    </tr>
+                <input type="radio" name="Rates" value="Recovery Rate" />
+                <input type="radio" name="Rates" value="Survival Rate" />
+                
+                </tbody>
+            </table>
+            <table border="0">
+                <thead>
+                    <tr>
+                        <th><center>Age Range</center></th>
+                        <th><center>Gender</center></th>
+                        <th><center>Month</center></th>
+                        <th><center>Location</center></th>
+                        <th><center>Race</center></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <center><select name="Age Range">
+                                <option>0-17</option>
+                                <option>18-44</option>
+                                <option>45-64</option>
+                                <option>65-74</option>
+                                <option>75+<option>
+                            </select></center>
+                        </td>
+                        <td>
+                            <center><select name="Gender">
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select></center>
+                        </td>
+                        <td>
+                            <center><select name="Month">
+                                <option>Jan</option>
+                                <option>Feb</option>
+                                <option>Mar</option>
+                                <option>Apr</option>
+                                <option>May</option>
+                                <option>Jun</option>
+                                <option>Jul</option>
+                                <option>Aug</option>
+                                <option>Sep</option>
+                                <option>Oct</option>
+                                <option>Nov</option>
+                                <option>Dec</option>
+                            </select></center>
+                        </td>
+                        <td>
+                            <center><select name="Location">
+                                <option>Age</option>
+                                <option>Gender</option>
+                                <option>Location</option>
+                                <option>Race</option>
+                            </select></center>
+                        </td>
+                        <td>
+                            <center><select name="Race">
+                                <option>Age</option>
+                                <option>Gender</option>
+                                <option>Location</option>
+                                <option>Race</option>
+                            </select></center>
+                        </td>
+                    </tr>
+                </tbody>
+            </table><br>
+            <input type="submit" value="Submit" name="Submit Button" />
+        </div>
     </body>
 </html>
