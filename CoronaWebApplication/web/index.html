@@ -5,37 +5,56 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        h1 {
+            color: firebrick;
+            font-size: 230%
+        }
+        h3 {
+            color: black;
+            font-size: 110%;
+        }
+        body {
+            background-color: whitesmoke;
+        }
+        .radio {
+            width: 25%;
+            float: left;
+            padding: 10px;
+        }
+        .dropdowns {
+            width: 75%;
+            float: right;
+            padding: 10px;
+        }
+    </style>
     <head>
         <title>Coronavirus Info</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>
-        
+    <body>    
         <center><h1>Covid-19 Coronavirus Information</h1></center>
-        <form name="Search" action="newjsp.jsp">
-        <div>
-             <table border="0">
-                <tbody>
-                    <tr>
-                        <td>
-                        <input type="radio" name="Rates" value="Infection Rate" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                        <input type="radio" name="Rates" value="Recovery Rate" />
-                        </td>
-                    </tr>   
-                    <tr>
-                        <td>
-                        <input type="radio" name="Rates" value="Survival Rate" />
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        
+        <center><h3>For information on how to protect yourself and others from 
+                the coronavirus, visit the
+        <a href="https://www.cdc.gov/coronavirus/2019-ncov/index.html" target="_blank">
+            CDC Website.
+        </a>
+        </h3></center>
+        
+        <form name="Search" action="newjsp.jsp">        
+        <div class="radio">
+            <ul style="list-style-type: none">
+                <li><input type="radio" name="Rates" value="Infection Rate" /></li>                      
+                <li><input type="radio" name="Rates" value="Recovery Rate" /></li>          
+                <li><input type="radio" name="Rates" value="Survival Rate" /></li>
+            </ul>
         </div>
-        <div>
+        <div class="dropdowns">
             <table border="0">
                 <thead>
                     <tr>
@@ -99,6 +118,7 @@ and open the template in the editor.
                 </tbody>
             </table><br>
             <input type="submit" value="Search" name="Search Button" />
+            <input type="reset" value="Clear" name="Clear Button" />
         </div>
         </form>
     </body>
