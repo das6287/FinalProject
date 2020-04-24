@@ -13,20 +13,29 @@ and open the template in the editor.
             color: firebrick;
             font-size: 230%
         }
-        h3 {
+        h2 {
             color: black;
             font-size: 110%;
         }
         body {
             background-color: whitesmoke;
         }
+        table {
+            width: 50%;
+        }
+        th, td {
+            text-align: center;
+            padding-bottom: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
         .radio {
-            width: 25%;
+            width: 20%;
             float: left;
             padding: 10px;
         }
         .dropdowns {
-            width: 75%;
+            width: 80%;
             float: right;
             padding: 10px;
         }
@@ -39,36 +48,40 @@ and open the template in the editor.
     <body>    
         <center><h1>Covid-19 Coronavirus Information</h1></center>
         
-        <center><h3>For information on how to protect yourself and others from 
+        <center><h2>For information on how to protect yourself and others from 
                 the coronavirus, visit the
         <a href="https://www.cdc.gov/coronavirus/2019-ncov/index.html" target="_blank">
             CDC Website.
         </a>
-        </h3></center>
+        </h2></center>
         
         <form name="Search" action="newjsp.jsp">        
         <div class="radio">
             <ul style="list-style-type: none">
-                <li><input type="radio" name="Rates" value="Infection Rate" /></li>                      
-                <li><input type="radio" name="Rates" value="Recovery Rate" /></li>          
+                <li><input type="radio" name="Rates" value="Infection Rate" /></li>
+                
+                <li><input type="radio" name="Rates" value="Recovery Rate" /></li>
+                
                 <li><input type="radio" name="Rates" value="Survival Rate" /></li>
+                
             </ul>
         </div>
         <div class="dropdowns">
             <table border="0">
                 <thead>
                     <tr>
-                        <th><center>Age Range</center></th>
-                        <th><center>Gender</center></th>
-                        <th><center>Month</center></th>
-                        <th><center>Country</center></th>
-                        <th><center>Race</center></th>
+                        <th>Age Range</th>
+                        <th>Gender</th>
+                        <th>Month</th>
+                        <th>Country</th>
+                        <th>Race</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>
                             <center><select name="Age Range">
+                                <option>-Select-</option>
                                 <option>0-17</option>
                                 <option>18-44</option>
                                 <option>45-64</option>
@@ -78,12 +91,14 @@ and open the template in the editor.
                         </td>
                         <td>
                             <center><select name="Gender">
+                                <option>-Select-</option>
                                 <option>Male</option>
                                 <option>Female</option>
                             </select></center>
                         </td>
                         <td>
                             <center><select name="Month">
+                                <option>-Select-</option>
                                 <option>Jan</option>
                                 <option>Feb</option>
                                 <option>Mar</option>
@@ -100,6 +115,7 @@ and open the template in the editor.
                         </td>
                         <td>
                             <center><select name="Country">
+                                <option>-Select-</option>
                                 <option>Age</option>
                                 <option>Gender</option>
                                 <option>Location</option>
@@ -108,6 +124,7 @@ and open the template in the editor.
                         </td>
                         <td>
                             <center><select name="Race">
+                                <option>-Select-</option>
                                 <option>Age</option>
                                 <option>Gender</option>
                                 <option>Location</option>
