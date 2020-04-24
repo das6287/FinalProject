@@ -7,11 +7,24 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+    <style>
+        h1 {
+            color: firebrick;
+            font-size: 230%;
+        }
+        body {
+            background-color: whitesmoke;
+        }
+    </style>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <meta http-equiv="Refresh" content="10">
+        <title>Coronavirus Info</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <center><h1>Covid-19 Coronavirus Information</h1></center>
+        <form name="Main Page" action="index.html">
+            <input type="submit" value="Back" name="Back Button" />
+        </form>
     </body>
 </html>
