@@ -62,8 +62,7 @@ and open the template in the editor.
         
         <form name="Search" action="corona.jsp">        
         <div class="radio">
-            <ul style="list-style-type: none">
-                
+            <ul style="list-style-type: none">  
                 <li><input type="radio" id="InfectionRate" name="Rates" value="Infection Rate"/>
                 <label for="InfectionRate">Infection Rate</label></li>
                 <li><input type="radio" id="RecoveryRate" name="Rates" value="Recovery Rate" />
@@ -80,6 +79,7 @@ and open the template in the editor.
                         <th>Gender</th>
                         <th>Month</th>
                         <th>Country</th>
+                        <th>State</th>
                         <th>Race</th>
                     </tr>
                 </thead>
@@ -124,6 +124,20 @@ and open the template in the editor.
                                 <option>-Select Option-</option>
                                 <option>United States</option>
                                 <option>United Kingdom</option>
+                                <option></option>
+                                <option></option>
+                                <option></option>
+                                <option></option>
+                                <option></option>
+                                <option></option>
+                                <option></option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="State" disabled="disabled">
+                                <option>-Select Option-</option>
+                                <option></option>
+                                <option></option>
                                 <option></option>
                                 <option></option>
                                 <option></option>
