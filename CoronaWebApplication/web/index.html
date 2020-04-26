@@ -63,11 +63,11 @@ and open the template in the editor.
         <form name="Search" action="corona.jsp">        
         <div class="radio">
             <ul style="list-style-type: none">  
-                <li><input type="radio" id="InfectionRate" name="Rates" value="Infection Rate"/>
+                <li><input type="radio" id="InfectionRate" name="Rate" value="Infection Rate"/>
                 <label for="InfectionRate">Infection Rate</label></li>
-                <li><input type="radio" id="RecoveryRate" name="Rates" value="Recovery Rate" />
+                <li><input type="radio" id="RecoveryRate" name="Rate" value="Recovery Rate" />
                 <label for="RecoveryRate">Recovery Rate</label></li>
-                <li><input type="radio" id="SurvivalRate" name="Rates" value="Survival Rate" />
+                <li><input type="radio" id="SurvivalRate" name="Rate" value="Survival Rate" />
                 <label for="SurvivalRate">Survival Rate</label></li>
             </ul>
         </div>
@@ -87,7 +87,7 @@ and open the template in the editor.
                     <tr>
                         <td>
                             <select name="Age Range">
-                                <option>-Select Option-</option>
+                                <option value="null">-Select Option-</option>
                                 <option>0-17</option>
                                 <option>18-44</option>
                                 <option>45-64</option>
@@ -97,14 +97,14 @@ and open the template in the editor.
                         </td>
                         <td>
                             <select name="Gender">
-                                <option>-Select Option-</option>
+                                <option value="null">-Select Option-</option>
                                 <option>Male</option>
                                 <option>Female</option>
                             </select>
                         </td>
                         <td>
                             <select name="Month">
-                                <option>-Select Option-</option>
+                                <option value="null">-Select Option-</option>
                                 <option>Jan</option>
                                 <option>Feb</option>
                                 <option>Mar</option>
@@ -121,7 +121,7 @@ and open the template in the editor.
                         </td>
                         <td>
                             <select name="Country">
-                                <option>-Select Option-</option>
+                                <option value="null">-Select Option-</option>
                                 <option>United States</option>
                                 <option>United Kingdom</option>
                                 <option></option>
@@ -134,8 +134,8 @@ and open the template in the editor.
                             </select>
                         </td>
                         <td>
-                            <select name="State" disabled="disabled">
-                                <option>-Select Option-</option>
+                            <select name="State">
+                                <option value="null">-Select Option-</option>
                                 <option></option>
                                 <option></option>
                                 <option></option>
@@ -149,7 +149,7 @@ and open the template in the editor.
                         </td>
                         <td>
                             <select name="Race">
-                                <option>-Select Option-</option>
+                                <option value="null">-Select Option-</option>
                                 <option></option>
                                 <option></option>
                                 <option></option>
