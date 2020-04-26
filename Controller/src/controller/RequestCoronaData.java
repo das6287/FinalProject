@@ -16,16 +16,17 @@ package controller;
  */
 public class RequestCoronaData {
 
-    public RequestCoronaData() {
-    String race;
-    int age;
-    String gender;
-    String country;
+    public RequestCoronaData(String race, String age, String gender, String country,
+        String state, String month) {
+        
+        
 }
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        
         
     }
     
