@@ -56,10 +56,12 @@ public class RequestCorona extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    @Override
+    //@Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
+        
     }
 
     /**
@@ -75,7 +77,7 @@ public class RequestCorona extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
         
-        String url = "/index.html";
+        String url = "/corona.jsp";
         
         String rate = request.getParameter("Rate");
         String age = request.getParameter("Age Range");
@@ -83,12 +85,17 @@ public class RequestCorona extends HttpServlet {
         String month = request.getParameter("Month");
         String country = request.getParameter("Country");
         
-        String state = request.getParameter("State");
-        
+        if("United States".equals(country)) {
+            String state = request.getParameter("State");
+            System.out.println(state);
+        }
         String race = request.getParameter("Race");
         System.out.println("The "+rate+" of a(n) "+race+gender+" of age "+age+" from the country "
             +country+" during the month of "+month+" is: ");
         
+        getServletContext()
+            .getRequestDispatcher(url)
+            .forward(request, response);
         
     }
 
@@ -101,5 +108,9 @@ public class RequestCorona extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+    private Object getServletContext() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }
