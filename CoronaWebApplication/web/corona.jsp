@@ -26,23 +26,6 @@
     
     <body>
         <h1>Covid-19 Coronavirus Information</h1>
-        <form name="DB Info" action="RequestCoronaData.java">
-            
-        </form>
-  
-    <%    
-        String rate = request.getParameter("Rate");
-        String age = request.getParameter("Age Range");
-        String gender = request.getParameter("Gender");
-        String month = request.getParameter("Month");
-        String country = request.getParameter("Country");
-        
-        String state = request.getParameter("State");
-        
-        String race = request.getParameter("Race");
-        out.println("The "+rate+" of a(n) "+race+gender+" of age "+age+" from the country "
-            +country+" during the month of "+month+" is: ");
-        %>
         
         <form name="Main Page" action="index.html">
             <input type="submit" value="Back" name="Back Button" />
