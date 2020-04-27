@@ -40,7 +40,7 @@
         String state = request.getParameter("State");
         
         String race = request.getParameter("Race");
-        out.println("The "+rate+" of a "+gender+" of age "+age+" from the country "
+        out.println("The "+rate+" of a(n) "+race+gender+" of age "+age+" from the country "
             +country+" during the month of "+month+" is: ");
         %>
         
