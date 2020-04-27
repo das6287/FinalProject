@@ -32,7 +32,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="recoveryRadio" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
-                              <Component id="ageCombo" min="-2" pref="75" max="-2" attributes="0"/>
+                              <Component id="ageCombo" min="-2" pref="105" max="-2" attributes="0"/>
                           </Group>
                           <Component id="fatalityRadio" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="infectionRadio" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -40,11 +40,11 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="locationCombo" min="-2" pref="75" max="-2" attributes="0"/>
+                              <Component id="locationCombo" min="-2" pref="105" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="raceCombo" min="-2" pref="75" max="-2" attributes="0"/>
+                              <Component id="raceCombo" min="-2" pref="105" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="genderCombo" min="-2" pref="75" max="-2" attributes="0"/>
+                              <Component id="genderCombo" min="-2" pref="105" max="-2" attributes="0"/>
                           </Group>
                           <Component id="submitButton" min="-2" pref="168" max="-2" attributes="0"/>
                       </Group>
@@ -67,13 +67,16 @@
                   <Component id="recoveryRadio" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="fatalityRadio" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="infectionRadio" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="submitButton" min="-2" pref="44" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <Component id="submitButton" min="-2" pref="44" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace pref="27" max="32767" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="110" max="-2" attributes="0"/>
@@ -122,13 +125,8 @@
     </Component>
     <Component class="javax.swing.JComboBox" name="locationCombo">
       <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
-          </StringArray>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;&quot;, &quot;African American&quot;, &quot;White&quot;, &quot;Hispanic&quot; })" type="code"/>
         </Property>
       </Properties>
       <AuxValues>
@@ -137,13 +135,8 @@
     </Component>
     <Component class="javax.swing.JComboBox" name="raceCombo">
       <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
-          </StringArray>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;&quot;, &quot;USA&quot;, &quot;China&quot;, &quot;Italy&quot; })" type="code"/>
         </Property>
       </Properties>
       <AuxValues>
@@ -152,13 +145,8 @@
     </Component>
     <Component class="javax.swing.JComboBox" name="genderCombo">
       <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Item 1"/>
-            <StringItem index="1" value="Item 2"/>
-            <StringItem index="2" value="Item 3"/>
-            <StringItem index="3" value="Item 4"/>
-          </StringArray>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;&quot;, &quot;Male&quot;, &quot;Female&quot; })" type="code"/>
         </Property>
       </Properties>
       <AuxValues>
@@ -169,6 +157,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Submit"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="submitButtonActionPerformed"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <AuxValues>
