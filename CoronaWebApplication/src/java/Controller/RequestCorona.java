@@ -6,14 +6,14 @@ package Controller;
  * and open the template in the editor.
  */
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import javax.servlet.ServletException;
+import java.io.*;
+import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import 
 /**
  *
  * @author jpdys
@@ -106,11 +106,12 @@ public class RequestCorona extends HttpServlet {
      *
      * @return a String containing servlet description
      */
-    //@Override
+    @Override
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 
+    
     private Object getServletContext() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
