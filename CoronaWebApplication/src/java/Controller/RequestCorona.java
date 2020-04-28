@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import 
+//import Model.DBInteract;
 /**
  *
  * @author jpdys
@@ -56,7 +56,7 @@ public class RequestCorona extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    //@Override
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
@@ -93,11 +93,11 @@ public class RequestCorona extends HttpServlet {
         System.out.println("The "+rate+" of a(n) "+race+gender+" of age "+age+" from the country "
             +country+" during the month of "+month+" is: ");
         
-        String query = DBInteract.execute("select * from testTable");
+        //String query = DBInteract.execute("select * from testTable");
         
-        getServletContext()
-            .getRequestDispatcher(url)
-            .forward(request, response);
+        //getServletContext() 
+           // .getRequestDispatcher(url)
+           // .forward(request, response);
         
     }
 
@@ -112,8 +112,8 @@ public class RequestCorona extends HttpServlet {
     }// </editor-fold>
 
     
-    private Object getServletContext() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   // private Object getServletContext() {
+   //     throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    //}
 
 }
