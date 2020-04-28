@@ -93,6 +93,8 @@ public class RequestCorona extends HttpServlet {
         System.out.println("The "+rate+" of a(n) "+race+gender+" of age "+age+" from the country "
             +country+" during the month of "+month+" is: ");
         
+        String query = DBInteract.execute("select * from testTable");
+        
         getServletContext()
             .getRequestDispatcher(url)
             .forward(request, response);
