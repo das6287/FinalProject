@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-//import Model.DBInteract;
+import Model.DBInteract;
 /**
  *
  * @author jpdys
@@ -100,16 +100,6 @@ public class RequestCorona extends HttpServlet {
            // .forward(request, response);
         
     }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
 
     
     //public Object getServletContext() {
