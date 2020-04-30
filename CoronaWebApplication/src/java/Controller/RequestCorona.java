@@ -112,8 +112,8 @@ public class RequestCorona extends HttpServlet {
     }// </editor-fold>
 
     
-   // private Object getServletContext() {
-   //     throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    //public Object getServletContext() {
+    //    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     //}
 
 }
