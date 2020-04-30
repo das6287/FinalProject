@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Model.DBInteract;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -64,22 +63,6 @@ public class RequestCorona extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
         
-        
-    }
-
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-        
         String url = "/corona.jsp";
         
         String rate = request.getParameter("Rate");
@@ -101,7 +84,7 @@ public class RequestCorona extends HttpServlet {
         }
         try {
         Statement stmt = null;
-        String query = "select "+month+" from testTable";
+        String query = "select "+age+" from CORONAVIRUSAGEGENDER";
             stmt.execute(query);
         } catch (SQLException ex) {
             Logger.getLogger(RequestCorona.class.getName()).log(Level.SEVERE, null, ex);
@@ -110,7 +93,23 @@ public class RequestCorona extends HttpServlet {
         getServletContext() 
             .getRequestDispatcher(url)
             .forward(request, response);
+            
+    }
+
+    /**
+     * Handles the HTTP <code>POST</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
         
+
     }
 
     
