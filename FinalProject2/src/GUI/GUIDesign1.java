@@ -13,7 +13,6 @@ import Model.DBInteract;
 
 public class GUIDesign1 extends javax.swing.JFrame {
     
-    DBInteract myObject = new DBInteract();
     /**
      * Creates new form GUIDesign1
      */
@@ -318,12 +317,12 @@ layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         String dateSelected = dateCombo.getSelectedItem().toString();
         String countrySelected = countryCombo.getSelectedItem().toString();
         
-        if (dateSelected == "" || countrySelected == ""){
+        if ("".equals(dateSelected) || "".equals(countrySelected)){
           outputText.setText("One or more choices is not selected. Try again");
         }
         else{
             //sends the selected information to DBInteract class
-            double str = myObject.getCountryGrowthRate(dateSelected, countrySelected);
+            double str = DBInteract.getCountryGrowthRate(dateSelected, countrySelected);
             //converts double value to string
             String output = String.valueOf(str);
             
@@ -359,10 +358,8 @@ layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new GUIDesign1().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new GUIDesign1().setVisible(true);
         });
     }
 
