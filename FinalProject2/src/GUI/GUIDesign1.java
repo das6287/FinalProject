@@ -38,6 +38,7 @@ public class GUIDesign1 extends javax.swing.JFrame {
         dateCombo = new javax.swing.JComboBox<>();
         dateLabel = new javax.swing.JLabel();
         countryLabel = new javax.swing.JLabel();
+        clearButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("COVID-19");
@@ -59,6 +60,7 @@ public class GUIDesign1 extends javax.swing.JFrame {
         countryCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "",
             "Afghanistan" ,
             "Albania" ,
+            "Algeria",
             "Andorra" ,
             "Angola" ,
             "Antigua and Barbuda",
@@ -68,8 +70,8 @@ public class GUIDesign1 extends javax.swing.JFrame {
             "Austria" ,
             "Azerbaijan",
             "Bahamas" ,
-            "Bahrain," ,
-            "Bangladesh,",
+            "Bahrain" ,
+            "Bangladesh",
             "Barbados" ,
             "Belarus" ,
             "Belgium" ,
@@ -243,61 +245,71 @@ dateLabel.setText("Date");
 
 countryLabel.setText("Country");
 
-javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-getContentPane().setLayout(layout);
-layout.setHorizontalGroup(
-layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-    .addGap(151, 151, 151)
-    .addComponent(dateLabel)
-    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-    .addComponent(countryLabel)
-    .addGap(95, 95, 95))
-    .addGroup(layout.createSequentialGroup()
-        .addGap(16, 16, 16)
-        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(105, 105, 105)
-                .addComponent(dateCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(countryCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 18, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+clearButton.setText("Clear");
+clearButton.addActionListener(new java.awt.event.ActionListener() {
+public void actionPerformed(java.awt.event.ActionEvent evt) {
+    clearButtonActionPerformed(evt);
+    }
+    });
+
+    javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+    getContentPane().setLayout(layout);
+    layout.setHorizontalGroup(
+        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGap(151, 151, 151)
+            .addComponent(dateLabel)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(countryLabel)
+            .addGap(95, 95, 95))
+        .addGroup(layout.createSequentialGroup()
+            .addGap(16, 16, 16)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane1)
+                        .addGroup(layout.createSequentialGroup()
                             .addComponent(growthRadio)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(fatalityRadio)
-                                .addGap(62, 62, 62)
-                                .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addContainerGap())
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(105, 105, 105)
+                    .addComponent(dateCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(18, 18, 18)
+                    .addComponent(countryCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 18, Short.MAX_VALUE))
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(fatalityRadio)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(18, 18, 18)
+                    .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(11, 11, 11))))
     );
     layout.setVerticalGroup(
         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(layout.createSequentialGroup()
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(countryLabel)
+            .addContainerGap(16, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(countryLabel, javax.swing.GroupLayout.Alignment.TRAILING)
                 .addComponent(dateLabel))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(23, 23, 23)
                     .addComponent(growthRadio)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(fatalityRadio))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(fatalityRadio)
+                        .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(layout.createSequentialGroup()
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(dateCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(countryCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(23, 23, 23)
-                    .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGap(67, 67, 67)))
             .addGap(35, 35, 35)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(22, 22, 22))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap())
     );
 
     pack();
@@ -317,18 +329,50 @@ layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         String dateSelected = dateCombo.getSelectedItem().toString();
         String countrySelected = countryCombo.getSelectedItem().toString();
         
-        if ("".equals(dateSelected) || "".equals(countrySelected)){
-          outputText.setText("One or more choices is not selected. Try again");
+        if (growthRadio.isSelected() == true){
+            if ("".equals(countrySelected) || "".equals(dateSelected)){
+              outputText.setText("One or more choices is not selected. Try again");
+            }
+            else{
+                //sends the selected information to DBInteract class
+                double str = DBInteract.getCountryGrowthRate(dateSelected, countrySelected);
+                double str2 = DBInteract.getWorldGrowthRate(dateSelected);
+                //converts double value to string
+                String output = String.valueOf(str);
+                String output2 = String.valueOf(str2);
+                //sets the text to the values calculated in DBInteract
+                outputText.setText("The country COVID-19 growth rate is: "+ output + "%" 
+                        + "\nThe world COVID-19 growth rate is: " + output2 + "%");
+            }
+        }    
+        else if (fatalityRadio.isSelected() == true){
+            if ("".equals(countrySelected) || "".equals(dateSelected)){
+              outputText.setText("One or more choices is not selected. Try again");
+            }
+            else{
+                //sends the selected information to DBInteract class
+                double str = DBInteract.getCountryDeathRate(dateSelected, countrySelected);
+                double str2 = DBInteract.getWorldDeathRate(dateSelected);
+                //converts double value to string
+                String output = String.valueOf(str);
+                String output2 = String.valueOf(str2);
+                //sets the text to the values calculated in DBInteract
+                outputText.setText("The country COVID-19 death rate is: "+ output + "%" 
+                        + "\nThe world COVID-19 death rate is: " + output2 + "%");
+            }      
         }
         else{
-            //sends the selected information to DBInteract class
-            double str = DBInteract.getCountryGrowthRate(dateSelected, countrySelected);
-            //converts double value to string
-            String output = String.valueOf(str);
-            
-            outputText.setText("The percent is: "+ output + "%");
+            outputText.setText("A rate is not selected.");
         }
     }//GEN-LAST:event_submitButtonActionPerformed
+
+    private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
+        growthRadio.setSelected(false);
+        fatalityRadio.setSelected(false);
+        outputText.setText("");
+        countryCombo.setSelectedItem("");
+        dateCombo.setSelectedItem("");
+    }//GEN-LAST:event_clearButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -364,6 +408,7 @@ layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton clearButton;
     private javax.swing.JComboBox<String> countryCombo;
     private javax.swing.JLabel countryLabel;
     private javax.swing.JComboBox<String> dateCombo;
