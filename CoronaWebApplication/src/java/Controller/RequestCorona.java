@@ -14,6 +14,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Model.DBInteract;
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author jpdys
@@ -84,16 +87,25 @@ public class RequestCorona extends HttpServlet {
         String gender = request.getParameter("Gender");
         String month = request.getParameter("Month");
         String country = request.getParameter("Country");
+        String race = request.getParameter("Race");
         
         if("United States".equals(country)) {
             String state = request.getParameter("State");
-            System.out.println(state);
-        }
-        String race = request.getParameter("Race");
-        System.out.println("The "+rate+" of a(n) "+race+gender+" of age "+age+" from the country "
+            //System.out.println(state);
+            System.out.println("The "+rate+" of a(n) "+race+gender+" of age "+age+" from "+state+", "
             +country+" during the month of "+month+" is: ");
-        
-        String query = Model.DBInteractTest.execute("select "+month+" from testTable");
+        }
+        else {
+            System.out.println("The "+rate+" of a(n) "+race+gender+" of age "+age+" from the country "
+            +country+" during the month of "+month+" is: ");
+        }
+        try {
+        Statement stmt = null;
+        String query = "select "+month+" from testTable";
+            stmt.execute(query);
+        } catch (SQLException ex) {
+            Logger.getLogger(RequestCorona.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         getServletContext() 
             .getRequestDispatcher(url)
