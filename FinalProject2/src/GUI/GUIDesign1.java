@@ -9,8 +9,11 @@ package GUI;
  *
  * @author das6287
  */
-public class GUIDesign1 extends javax.swing.JFrame {
+import Model.DBInteract;
 
+public class GUIDesign1 extends javax.swing.JFrame {
+    
+    DBInteract myObject = new DBInteract();
     /**
      * Creates new form GUIDesign1
      */
@@ -27,179 +30,305 @@ public class GUIDesign1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        survivalRadio = new javax.swing.JRadioButton();
-        recoveryRadio = new javax.swing.JRadioButton();
-        infectionRadio = new javax.swing.JRadioButton();
-        ageCombo = new javax.swing.JComboBox<>();
+        fatalityRadio = new javax.swing.JRadioButton();
+        growthRadio = new javax.swing.JRadioButton();
         countryCombo = new javax.swing.JComboBox<>();
-        raceCombo = new javax.swing.JComboBox<>();
-        genderCombo = new javax.swing.JComboBox<>();
         submitButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         outputText = new javax.swing.JTextArea();
-        monthCombo = new javax.swing.JComboBox<>();
-        ageLabel = new javax.swing.JLabel();
-        genderLabel = new javax.swing.JLabel();
-        monthLabel = new javax.swing.JLabel();
+        dateCombo = new javax.swing.JComboBox<>();
+        dateLabel = new javax.swing.JLabel();
         countryLabel = new javax.swing.JLabel();
-        raceLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("COVID-19");
 
-        survivalRadio.setText("Survival Rate");
-        survivalRadio.addActionListener(new java.awt.event.ActionListener() {
+        fatalityRadio.setText("Fatality Rate");
+        fatalityRadio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                survivalRadioActionPerformed(evt);
+                fatalityRadioActionPerformed(evt);
             }
         });
 
-        recoveryRadio.setText("Recovery Rate");
-        recoveryRadio.addActionListener(new java.awt.event.ActionListener() {
+        growthRadio.setText("Growth Rate");
+        growthRadio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                recoveryRadioActionPerformed(evt);
+                growthRadioActionPerformed(evt);
             }
         });
 
-        infectionRadio.setText("Infection Rate");
-        infectionRadio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                infectionRadioActionPerformed(evt);
-            }
-        });
+        countryCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "",
+            "Afghanistan" ,
+            "Albania" ,
+            "Andorra" ,
+            "Angola" ,
+            "Antigua and Barbuda",
+            "Argentina" ,
+            "Armenia" ,
+            "Australia",
+            "Austria" ,
+            "Azerbaijan",
+            "Bahamas" ,
+            "Bahrain," ,
+            "Bangladesh,",
+            "Barbados" ,
+            "Belarus" ,
+            "Belgium" ,
+            "Belize" ,
+            "Benin" ,
+            "Bhutan" ,
+            "Bolivia" ,
+            "Bosnia and Herzegovina" ,
+            "Botswana" ,
+            "Brazil" ,
+            "Brunei" ,
+            "Bulgaria" ,
+            "Burkina Faso" ,
+            "Burma" ,
+            "Burundi" ,
+            "Cabo Verde" ,
+            "Cambodia" ,
+            "Cameroon" ,
+            "Canada" ,
+            "Central African Republic" ,
+            "Chad" ,
+            "Chile" ,
+            "China" ,
+            "Colombia" ,
+            "Congo (Brazzaville)" ,
+            "Congo (Kinshasa)" ,
+            "Costa Rica" ,
+            "Cote d'Ivoire",
+            "Croatia",
+            "Cuba" ,
+            "Cyprus" ,
+            "Czechia" ,
+            "Denmark" ,
+            "Diamond Princess" ,
+            "Djibouti" ,
+            "Dominica" ,
+            "Dominican Republic" ,
+            "Ecuador" ,
+            "Egypt" ,    "El Salvador" ,
+            "Equatorial Guinea" ,
+            "Eritrea" ,
+            "Estonia" ,
+            "Eswatini" ,    "Ethiopia" ,
+            "Fiji" ,
+            "Finland" ,
+            "France" ,
+            "Gabon" ,
+            "Gambia" ,
+            "Georgia" ,
+            "Germany" ,
+            "Ghana" ,
+            "Greece" ,
+            "Grenada" ,
+            "Guatemala" ,
+            "Guinea" ,
+            "Guinea-Bissau" ,
+            "Guyana" ,    "Haiti" ,
+            "Holy See" ,
+            "Honduras" ,
+            "Hungary" ,    "Iceland" ,
+            "India" ,
+            "Indonesia" ,
+            "Iran" ,    "Iraq" ,    "Ireland" ,    "Israel" ,
+            "Italy" ,
+            "Jamaica" ,
+            "Japan" ,
+            "Jordan" ,
+            "Kazakhstan" ,
+            "Kenya" ,
+            "Korea, South" ,
+            "Kosovo" ,
+            "Kuwait" ,
+            "Kyrgyzstan" ,
+            "Laos" ,    "Latvia" ,
+            "Lebanon" ,
+            "Liberia" ,
+            "Libya" +
+            "Liechtenstein" ,
+            "Lithuania" ,
+            "Luxembourg" ,
+            "Madagascar" ,
+            "Malawi" ,
+            "Malaysia" ,
+            "Maldives" ,
+            "Mali" ,    "Malta" ,
+            "Mauritania" ,
+            "Mauritius" ,
+            "Mexico" ,
+            "Moldova" ,    "Monaco" ,    "Mongolia" ,
+            "Montenegro" ,
+            "Morocco" ,
+            "Mozambique" ,
+            "MS Zaandam" ,
+            "Namibia" ,
+            "Nepal" ,
+            "Netherlands" ,
+            "New Zealand" ,
+            "Nicaragua" ,
+            "Niger" ,
+            "Nigeria" ,
+            "North Macedonia" ,
+            "Norway" ,    "Oman" ,
+            "Pakistan" ,
+            "Panama" ,    "Papua New Guinea" ,
+            "Paraguay" ,
+            "Peru" ,    "Philippines" ,    "Poland" ,
+            "Portugal" ,
+            "Qatar" ,
+            "Romania" ,
+            "Russia" ,
+            "Rwanda" ,
+            "Saint Kitts and Nevis" ,
+            "Saint Lucia" ,
+            "Saint Vincent and the Grenadines" ,
+            "San Marino" ,
+            "Sao Tome and Principe" ,
+            "Saudi Arabia" ,
+            "Senegal" ,
+            "Serbia" ,
+            "Seychelles" ,
+            "Sierra Leone" ,
+            "Singapore" ,
+            "Slovenia" ,
+            "Somalia" ,    "South Africa" ,
+            "South Sudan" ,
+            "Spain" ,
+            "Sri Lanka" ,
+            "Sudan" ,    "Suriname" ,
+            "Sweden" ,
+            "Switzerland" ,
+            "Syria" ,
+            "Taiwan*" ,    "Tanzania" ,
+            "Thailand" ,
+            "Timor-Leste" ,
+            "Togo" ,
+            "Trinidad and Tobago" ,
+            "Tunisia" ,
+            "Turkey" ,
+            "Uganda" ,
+            "Ukraine" ,
+            "United Arab Emirates" ,
+            "United Kingdom" ,
+            "Uruguay" ,
+            "US" ,
+            "Uzbekistan" ,
+            "Venezuela" ,
+            "Vietnam" ,
+            "West Bank and Gaza" ,
+            "Western Sahara" ,
+            "Yemen" ,
+            "Zambia",
+            "Zimbabwe"}));
 
-        ageCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "0-15", "16-35", "36-70", "70+" }));
-        ageCombo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ageComboActionPerformed(evt);
-            }
-        });
+submitButton.setText("Submit");
+submitButton.addActionListener(new java.awt.event.ActionListener() {
+    public void actionPerformed(java.awt.event.ActionEvent evt) {
+        submitButtonActionPerformed(evt);
+    }
+    });
 
-        countryCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "African American", "White", "Hispanic" }));
+    outputText.setColumns(20);
+    outputText.setRows(5);
+    jScrollPane1.setViewportView(outputText);
 
-        raceCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "USA", "China", "Italy" }));
+    dateCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "1/22/2020", "1/23/2020", "1/24/2020", "1/25/2020", "1/26/2020", "1/27/2020", "1/28/2020", "1/29/2020", "1/30/2020", "1/31/2020", "2/1/2020", "2/2/2020", "2/3/2020", "2/4/2020", "2/5/2020", "2/6/2020", "2/7/2020", "2/8/2020", "2/9/2020", "2/10/2020", "2/11/2020", "2/12/2020", "2/13/2020", "2/14/2020", "2/15/2020", "2/16/2020", "2/17/2020", "2/18/2020", "2/19/2020", "2/20/2020", "2/21/2020", "2/22/2020", "2/23/2020", "2/24/2020"
+        , "2/25/2020", "2/26/2020", "2/27/2020", "2/28/2020", "2/29/2020", "3/1/2020", "3/2/2020"
+        , "3/3/2020", "3/4/2020", "3/5/2020", "3/6/2020", "3/7/2020", "3/8/2020", "3/9/2020", "3/10/2020", "3/11/2020", "3/12/2020", "3/13/2020", "3/14/2020", "3/15/2020", "3/16/2020", "3/17/2020", "3/18/2020", "3/19/2020", "3/20/2020", "3/21/2020", "3/22/2020", "3/23/2020", "3/24/2020", "3/25/2020", "3/26/2020", "3/27/2020", "3/28/2020", "3/29/2020", "3/30/2020", "3/31/2020"
+        , "4/1/2020", "4/2/2020", "4/3/2020", "4/4/2020", "4/5/2020", "4/6/2020", "4/7/2020", "4/8/2020", "4/9/2020", "4/10/2020", "4/11/2020", "4/12/2020", "4/13/2020", "4/14/2020", "4/15/2020", "4/16/2020", "4/17/2020", "4/18/2020", "4/19/2020", "4/20/2020" }));
 
-        genderCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Male", "Female" }));
+dateLabel.setText("Date");
 
-        submitButton.setText("Submit");
-        submitButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitButtonActionPerformed(evt);
-            }
-        });
+countryLabel.setText("Country");
 
-        outputText.setColumns(20);
-        outputText.setRows(5);
-        jScrollPane1.setViewportView(outputText);
-
-        monthCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Jan", "Feb", "Mar" }));
-
-        ageLabel.setText("Age Range");
-
-        genderLabel.setText("Gender");
-
-        monthLabel.setText("Month");
-
-        countryLabel.setText("Country");
-
-        raceLabel.setText("Race");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+getContentPane().setLayout(layout);
+layout.setHorizontalGroup(
+layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+    .addGap(151, 151, 151)
+    .addComponent(dateLabel)
+    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+    .addComponent(countryLabel)
+    .addGap(95, 95, 95))
+    .addGroup(layout.createSequentialGroup()
+        .addGap(16, 16, 16)
+        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addGap(105, 105, 105)
+                .addComponent(dateCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(countryCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 18, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(infectionRadio)
-                        .addGap(36, 36, 36)
-                        .addComponent(ageCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(genderCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(monthCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(raceCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(countryCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 10, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(survivalRadio)
-                            .addComponent(recoveryRadio))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(276, 276, 276))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1)
-                        .addContainerGap())))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ageLabel)
-                .addGap(83, 83, 83)
-                .addComponent(genderLabel)
-                .addGap(87, 87, 87)
-                .addComponent(monthLabel)
-                .addGap(87, 87, 87)
+                            .addComponent(growthRadio)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(fatalityRadio)
+                                .addGap(62, 62, 62)
+                                .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())))
+    );
+    layout.setVerticalGroup(
+        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(layout.createSequentialGroup()
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(countryLabel)
-                .addGap(102, 102, 102)
-                .addComponent(raceLabel)
-                .addGap(47, 47, 47))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(raceLabel, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(countryLabel, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(monthLabel, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(genderLabel, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(ageLabel, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(submitButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(infectionRadio)
-                            .addComponent(ageCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(genderCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(monthCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(raceCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(countryCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(recoveryRadio)
-                        .addGap(18, 18, 18)
-                        .addComponent(survivalRadio)))
-                .addGap(35, 35, 35)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
-        );
+                .addComponent(dateLabel))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(23, 23, 23)
+                    .addComponent(growthRadio)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(fatalityRadio))
+                .addGroup(layout.createSequentialGroup()
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(dateCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(countryCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(23, 23, 23)
+                    .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGap(35, 35, 35)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(22, 22, 22))
+    );
 
-        pack();
+    pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void survivalRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_survivalRadioActionPerformed
-        infectionRadio.setSelected(false);
-        recoveryRadio.setSelected(false);
-    }//GEN-LAST:event_survivalRadioActionPerformed
+    private void fatalityRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fatalityRadioActionPerformed
+        //makes the other radio button unselect
+        growthRadio.setSelected(false);
+    }//GEN-LAST:event_fatalityRadioActionPerformed
 
-    private void recoveryRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recoveryRadioActionPerformed
-        infectionRadio.setSelected(false);
-        survivalRadio.setSelected(false);
-    }//GEN-LAST:event_recoveryRadioActionPerformed
-
-    private void infectionRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infectionRadioActionPerformed
-        recoveryRadio.setSelected(false);
-        survivalRadio.setSelected(false);
-    }//GEN-LAST:event_infectionRadioActionPerformed
-
-    private void ageComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ageComboActionPerformed
-      
-    }//GEN-LAST:event_ageComboActionPerformed
+    private void growthRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_growthRadioActionPerformed
+        fatalityRadio.setSelected(false);
+    }//GEN-LAST:event_growthRadioActionPerformed
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
-        outputText.setText("Test");
+        //converts the objects in to strings and assings them to an variable
+        String dateSelected = dateCombo.getSelectedItem().toString();
+        String countrySelected = countryCombo.getSelectedItem().toString();
+        
+        if (dateSelected == "" || countrySelected == ""){
+          outputText.setText("One or more choices is not selected. Try again");
+        }
+        else{
+            //sends the selected information to DBInteract class
+            double str = myObject.getCountryGrowthRate(dateSelected, countrySelected);
+            //converts double value to string
+            String output = String.valueOf(str);
+            
+            outputText.setText("The percent is: "+ output + "%");
+        }
     }//GEN-LAST:event_submitButtonActionPerformed
 
     /**
@@ -238,21 +367,14 @@ public class GUIDesign1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> ageCombo;
-    private javax.swing.JLabel ageLabel;
     private javax.swing.JComboBox<String> countryCombo;
     private javax.swing.JLabel countryLabel;
-    private javax.swing.JComboBox<String> genderCombo;
-    private javax.swing.JLabel genderLabel;
-    private javax.swing.JRadioButton infectionRadio;
+    private javax.swing.JComboBox<String> dateCombo;
+    private javax.swing.JLabel dateLabel;
+    private javax.swing.JRadioButton fatalityRadio;
+    private javax.swing.JRadioButton growthRadio;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JComboBox<String> monthCombo;
-    private javax.swing.JLabel monthLabel;
     private javax.swing.JTextArea outputText;
-    private javax.swing.JComboBox<String> raceCombo;
-    private javax.swing.JLabel raceLabel;
-    private javax.swing.JRadioButton recoveryRadio;
     private javax.swing.JButton submitButton;
-    private javax.swing.JRadioButton survivalRadio;
     // End of variables declaration//GEN-END:variables
 }
