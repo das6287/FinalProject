@@ -15,11 +15,13 @@ public class DBInteractTest {
      */
     public static void main(String[] args) {
         
-        DBInteract coronaDB = new DBInteract();
+        new DBInteract();
         
-        System.out.println(DBInteract.findRow("Row1"));
-        System.out.println(DBInteract.findRow("Row2"));
-        System.out.println(DBInteract.findRow("Row4"));
+        System.out.println(DBInteract.getWorldData("4/15/2020", 0));
+        System.out.println(DBInteract.getWorldData("4/15/2020", 1));
+        System.out.println(DBInteract.getWorldGrowthRate("4/15/2020"));
+        System.out.println(DBInteract.getWorldData("4/21/2020", 0));
+        System.out.println(DBInteract.getCountryData("4/15/2020", "US", 0));
     }
     
 }
