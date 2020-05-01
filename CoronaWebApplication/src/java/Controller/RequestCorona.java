@@ -83,8 +83,8 @@ public class RequestCorona extends HttpServlet {
             +country+" during the month of "+month+" is: ");
         }
         try {
-        Statement stmt = null;
-        String query = "select "+age+" from CORONAVIRUSAGEGENDER";
+            Statement stmt = null;
+            String query = "select "+age+" from CORONAVIRUSAGEGENDER";
             stmt.execute(query);
         } catch (SQLException ex) {
             Logger.getLogger(RequestCorona.class.getName()).log(Level.SEVERE, null, ex);
@@ -92,8 +92,7 @@ public class RequestCorona extends HttpServlet {
         
         getServletContext() 
             .getRequestDispatcher(url)
-            .forward(request, response);
-            
+            .forward(request, response);      
     }
 
     /**
