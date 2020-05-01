@@ -20,7 +20,7 @@ import java.util.logging.Logger;
  *
  * @author jpdys
  */
-@WebServlet(urlPatterns = {"/RequestCoronaData"})
+@WebServlet(urlPatterns = {"/RequestCorona"})
 public class RequestCorona extends HttpServlet {
 
     /**
