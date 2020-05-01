@@ -6,6 +6,7 @@ package Controller;
  * and open the template in the editor.
  */
 
+import Model.DBInteract;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
@@ -13,12 +14,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 /**
  *
- * @author jpdys
+ * @author John Dyson
  */
 @WebServlet(urlPatterns = {"/RequestCorona"})
 public class RequestCorona extends HttpServlet {
@@ -35,18 +33,6 @@ public class RequestCorona extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet RequestCorona</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet RequestCorona at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -66,30 +52,25 @@ public class RequestCorona extends HttpServlet {
         String url = "/corona.jsp";
         
         String rate = request.getParameter("Rate");
-        String age = request.getParameter("Age Range");
-        String gender = request.getParameter("Gender");
-        String month = request.getParameter("Month");
+        String date = request.getParameter("Date");
         String country = request.getParameter("Country");
-        String race = request.getParameter("Race");
         
-        if("United States".equals(country)) {
-            String state = request.getParameter("State");
-            //System.out.println(state);
-            System.out.println("The "+rate+" of a(n) "+race+gender+" of age "+age+" from "+state+", "
-            +country+" during the month of "+month+" is: ");
+        System.out.println("The "+rate+" from "
+        +country+" on "+date+" is: ");
+       
+        if("Infection Rate".equals(rate)) {
+            //Gets the world growth rate from the database
+            DBInteract.getWorldGrowthRate(date);
+            //Gets the growth rate by country
+            DBInteract.getCountryGrowthRate(date, country);
         }
-        else {
-            System.out.println("The "+rate+" of a(n) "+race+gender+" of age "+age+" from the country "
-            +country+" during the month of "+month+" is: ");
+        if("Fatality Rate".equals(rate)) {
+            //Gets the world death rate from the database
+            DBInteract.getWorldDeathRate(date);
+            //Gets the death rate by country
+            DBInteract.getCountryDeathRate(date, country);    
         }
-        try {
-            Statement stmt = null;
-            String query = "select "+age+" from CORONAVIRUSAGEGENDER";
-            stmt.execute(query);
-        } catch (SQLException ex) {
-            Logger.getLogger(RequestCorona.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+   
         getServletContext() 
             .getRequestDispatcher(url)
             .forward(request, response);      
