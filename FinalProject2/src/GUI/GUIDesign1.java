@@ -18,6 +18,7 @@ public class GUIDesign1 extends javax.swing.JFrame {
      */
     public GUIDesign1() {
         initComponents();
+        new DBInteract();
     }
 
     /**
@@ -335,14 +336,11 @@ public void actionPerformed(java.awt.event.ActionEvent evt) {
             }
             else{
                 //sends the selected information to DBInteract class
-                double str = DBInteract.getCountryGrowthRate(dateSelected, countrySelected);
-                double str2 = DBInteract.getWorldGrowthRate(dateSelected);
-                //converts double value to string
-                String output = String.valueOf(str);
-                String output2 = String.valueOf(str2);
+                String output = DBInteract.getCountryGrowthRate(dateSelected, countrySelected);
+                String output2 = DBInteract.getWorldGrowthRate(dateSelected);
                 //sets the text to the values calculated in DBInteract
-                outputText.setText("The country COVID-19 growth rate is: "+ output + "%" 
-                        + "\nThe world COVID-19 growth rate is: " + output2 + "%");
+                outputText.setText("The country COVID-19 growth rate from previous day is: "+ output + "%" 
+                        + "\nThe world COVID-19 growth rate from previous day is: " + output2 + "%");
             }
         }    
         else if (fatalityRadio.isSelected() == true){
@@ -351,14 +349,11 @@ public void actionPerformed(java.awt.event.ActionEvent evt) {
             }
             else{
                 //sends the selected information to DBInteract class
-                double str = DBInteract.getCountryDeathRate(dateSelected, countrySelected);
-                double str2 = DBInteract.getWorldDeathRate(dateSelected);
-                //converts double value to string
-                String output = String.valueOf(str);
-                String output2 = String.valueOf(str2);
+                String output = DBInteract.getCountryDeathRate(dateSelected, countrySelected);
+                String output2 = DBInteract.getWorldDeathRate(dateSelected);
                 //sets the text to the values calculated in DBInteract
-                outputText.setText("The country COVID-19 death rate is: "+ output + "%" 
-                        + "\nThe world COVID-19 death rate is: " + output2 + "%");
+                outputText.setText("The country COVID-19 increase in deaths from previous day is: "+ output + "%" 
+                        + "\nThe world COVID-19 increase in deaths from previous day is: " + output2 + "%");
             }      
         }
         else{
