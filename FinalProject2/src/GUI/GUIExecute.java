@@ -5,17 +5,18 @@
  */
 package GUI;
 
-/**
- *
- * @author das6287
- */
+import Model.DBInteract;
+
 public class GUIExecute {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        DBInteract myObject = new DBInteract();
+        
+        
     }
     
 }
