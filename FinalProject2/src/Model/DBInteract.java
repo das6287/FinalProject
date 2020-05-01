@@ -3,6 +3,7 @@ package Model;
 import java.util.*;
 import java.io.*;
 import java.sql.*;
+import java.lang.Math;
 
 /**
  *
@@ -92,7 +93,7 @@ public class DBInteract {
      * @param date Date for the data
      * @return Growth percent of coronavirus from previous day
      */
-    public static double getWorldGrowthRate(String date) {
+    public static String getWorldGrowthRate(String date) {
         
         try {
             Connection con = DriverManager.getConnection(url,user,password);  
@@ -102,22 +103,23 @@ public class DBInteract {
             ResultSet rs = stmt.executeQuery("SELECT * FROM CoronavirusWorld " +
                         "WHERE Date = '" + date + "'");
             
-            if (rs.next() == false) { 
-                     System.out.println("Date not found: " + date);
-            } else {
-               return rs.getDouble(5);       
+            if (rs.next() == true) { 
+               double percentRounded = Math.round(rs.getDouble(5) *  1000)/1000.0;
+               return String.valueOf(percentRounded);     
             }
-
+                        
             stmt.close();
 
             con.close();
+            
+            return ("Date not found: " + date);
         }
         catch (Exception e) {
             System.out.println("catch3");
             System.out.println(e);
         }
         
-        return -1;
+        return ("Error receiving data");
     }
     
     /**
@@ -126,7 +128,7 @@ public class DBInteract {
      * @param date Date for the data
      * @return Percentage growth of deaths from previous day
      */
-    public static double getWorldDeathRate(String date) {
+    public static String getWorldDeathRate(String date) {
         
         double percentIncrease = -1;
         
@@ -144,8 +146,7 @@ public class DBInteract {
                 "WHERE Date = '" + date + "'");
             
             if (rs.next() == false) { 
-                     System.out.println("Data not found for: " + date);
-                     return -1;
+                     return ("Data not found for: " + date);
             } else {
                dateDeaths = rs.getInt(4);
             }
@@ -154,15 +155,13 @@ public class DBInteract {
                 "WHERE Date = '" + previousDate + "'");
             
             if (rs.next() == false) { 
-                     System.out.println("Data not found for: " + date);
-                     return -1;
+                     return ("Data not found for: " + date);
             } else {
                previousDeaths = rs.getInt(4);     
             }
             
             if(previousDeaths == 0) {
-                System.out.println("Growth rate undefined");
-                return -1;
+                return ("Growth rate undefined");
             }
             
             percentIncrease = ((dateDeaths/previousDeaths - 1) * 100);
@@ -176,7 +175,8 @@ public class DBInteract {
             System.out.println(e);
         }
         
-        return percentIncrease;
+        double percentRounded = Math.round(percentIncrease *  1000)/1000.0;
+        return String.valueOf(percentRounded);
     }
     
     /**
@@ -226,7 +226,7 @@ public class DBInteract {
      * @param country Country for the data
      * @return Percentage growth of coronavirus from previous day in specified country
      */
-    public static double getCountryGrowthRate(String date, String country) {
+    public static String getCountryGrowthRate(String date, String country) {
         
         double percentIncrease = -1;
         
@@ -244,9 +244,8 @@ public class DBInteract {
                 "WHERE Date = '" + date + "' AND Country = '" + country + "'");
             
             if (rs.next() == false) { 
-                     System.out.println("Data not found for: " + country +
+                     return ("Data not found for: " + country +
                         " on " +  date);
-                     return -1;
             } else {
                dateCases = rs.getInt(3);       
             }
@@ -255,15 +254,14 @@ public class DBInteract {
                 "WHERE Date = '" + previousDate + "' AND Country = '" + country + "'");
             
             if (rs.next() == false) { 
-                     System.out.println("Previous date not found for: " + country +
+                     return ("Previous date not found for: " + country +
                         " on " +  date);
-                     return -1;
             } else {
                previousCases = rs.getInt(3);     
             }
             
             if(previousCases == 0) {
-                return -1;
+                return ("Growth rate is undefined");
             }
             
             percentIncrease = ((dateCases/previousCases - 1) * 100);
@@ -277,7 +275,8 @@ public class DBInteract {
             System.out.println(e);
         }
         
-        return percentIncrease;
+        double percentRounded = Math.round(percentIncrease *  1000)/1000.0;
+        return String.valueOf(percentRounded);
     }
     
     /**
@@ -287,7 +286,7 @@ public class DBInteract {
      * @param country Country for the data
      * @return Percentage growth of coronavirus from previous day in specified country
      */
-    public static double getCountryDeathRate(String date, String country) {
+    public static String getCountryDeathRate(String date, String country) {
         
         double percentIncrease = -1;
         
@@ -305,9 +304,8 @@ public class DBInteract {
                 "WHERE Date = '" + date + "' AND Country = '" + country + "'");
             
             if (rs.next() == false) { 
-                     System.out.println("Data not found for: " + country +
+                     return ("Data not found for: " + country +
                         " on " +  date);
-                     return -1;
             } else {
                dateDeaths = rs.getInt(5);       
             }
@@ -316,15 +314,14 @@ public class DBInteract {
                 "WHERE Date = '" + previousDate + "' AND Country = '" + country + "'");
             
             if (rs.next() == false) { 
-                     System.out.println("Previous date not found for: " + country +
+                     return ("Previous date not found for: " + country +
                         " on " +  date);
-                     return -1;
             } else {
                previousDeaths = rs.getInt(5);     
             }
             
             if(previousDeaths == 0) {
-                return -1;
+                return ("Percentage growth is undefined");
             }
             
             percentIncrease = ((dateDeaths/previousDeaths - 1) * 100);
@@ -338,7 +335,8 @@ public class DBInteract {
             System.out.println(e);
         }
         
-        return percentIncrease;
+        double percentRounded = Math.round(percentIncrease *  1000)/1000.0;
+        return String.valueOf(percentRounded);
     }
     
     /**
@@ -375,5 +373,5 @@ public class DBInteract {
         
         return previousDate;
     }
-
+    
 }
