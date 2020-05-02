@@ -49,7 +49,7 @@ public class RequestCorona extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
         
-        new DBInteract();
+        /*new DBInteract();*/
         
         //Reintializes url to jsp url
         String url = "/corona.jsp";
@@ -64,15 +64,19 @@ public class RequestCorona extends HttpServlet {
        
         if("Infection Rate".equals(rate)) {
             //Gets the world growth rate from the database
-            System.out.println(DBInteract.getWorldGrowthRate(date));
+            String data1 = DBInteract.getWorldGrowthRate(date);
+            System.out.println(data1);
             //Gets the growth rate by country from the database
-            System.out.println(DBInteract.getCountryGrowthRate(date, country));          
+            String data2 = DBInteract.getCountryGrowthRate(date, country);
+            System.out.println(data2);          
         }
         if("Fatality Rate".equals(rate)) {
             //Gets the world death rate from the database
-            System.out.println(DBInteract.getWorldDeathRate(date));
+            String data3 = DBInteract.getWorldDeathRate(date);
+            System.out.println(data3);
             //Gets the death rate by country from the database
-            System.out.println(DBInteract.getCountryDeathRate(date, country));            
+            String data4 = DBInteract.getCountryDeathRate(date, country);
+            System.out.println(data4);            
         }
         
         //Forward request and response objects to specified URL
