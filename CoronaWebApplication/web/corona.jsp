@@ -14,8 +14,27 @@
             font-size: 230%;
             text-align: center;
         }
+        h2 {
+            color: black;
+            font-size: 110%;
+            text-align: center;
+        }
         body {
             background-color: whitesmoke;
+        }
+        .back {
+            width: 20%;
+            float: left;
+            padding-right: 10px;           
+        }
+        .results {
+            width: 100%;
+            text-align: center;
+            font-size: 75%;
+        }
+        .redText {
+            color: firebrick;
+            font-size: 110%;
         }
     </style>
     <head>
@@ -23,12 +42,28 @@
         <meta http-equiv="Refresh" content="10">
         <title>Coronavirus Info</title>
     </head>
-    
     <body>
         <h1>Covid-19 Coronavirus Information</h1>
         
-        <form name="Main Page" action="index.html">
-            <input type="submit" value="Back" name="Back Button" />
-        </form>   
+        <h2>For information on how to protect yourself and others from 
+                the coronavirus, visit the
+        <a href="https://www.cdc.gov/coronavirus/2019-ncov/index.html" target="_blank">
+            CDC Website.
+        </a>
+        </h2>
+        
+        <div class='results'>
+            <h3>
+                The World's [insert rate variable] is <span class='redText'>[insert rate value]%</span> on [date].
+            </h3>
+            <h3>
+                [country]'s [rate variable] is <span class='redText'>[rate value]%</span> on [date].
+            </h3>
+        </div>
+        <div class='back'>
+            <form name="Main Page" action="index.html">
+                <input type="submit" value="Back" name="Back Button" />
+            </form>   
+        </div>    
   </body>      
 </html>
