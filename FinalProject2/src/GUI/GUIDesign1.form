@@ -4,6 +4,9 @@
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="title" type="java.lang.String" value="COVID-19"/>
+    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+      <Color id="Default Cursor"/>
+    </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -24,13 +27,6 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
-              <Component id="dateLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
-              <Component id="countryLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -42,13 +38,6 @@
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
-                      <Component id="dateCombo" min="-2" pref="105" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="countryCombo" min="-2" pref="188" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="104" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
                       <Component id="fatalityRadio" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="submitButton" min="-2" pref="75" max="-2" attributes="0"/>
@@ -56,17 +45,41 @@
                       <Component id="clearButton" min="-2" pref="75" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
+                      <Component id="dateCombo" min="-2" pref="105" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="countryCombo" min="-2" pref="188" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="104" max="32767" attributes="0"/>
+                  </Group>
               </Group>
+          </Group>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
+                      <Component id="dateLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
+                      <Component id="countryLabel" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="180" max="-2" attributes="0"/>
+                      <Component id="headingLabel" min="-2" pref="170" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace pref="16" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="countryLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="dateLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="headingLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="dateLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="countryLabel" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                   <Group type="102" attributes="0">
@@ -97,6 +110,9 @@
   <SubComponents>
     <Component class="javax.swing.JRadioButton" name="fatalityRadio">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Fatality Rate"/>
       </Properties>
       <Events>
@@ -105,6 +121,9 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="growthRadio">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Growth Rate"/>
       </Properties>
       <Events>
@@ -113,6 +132,9 @@
     </Component>
     <Component class="javax.swing.JComboBox" name="countryCombo">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="12" style="0"/>
+        </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
           <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;&quot;,&#xa;    &quot;Afghanistan&quot; ,&#xa;    &quot;Albania&quot; ,&#xa;    &quot;Algeria&quot;,&#xa;    &quot;Andorra&quot; ,&#xa;    &quot;Angola&quot; ,&#xa;    &quot;Antigua and Barbuda&quot;,&#xa;    &quot;Argentina&quot; ,&#xa;    &quot;Armenia&quot; ,&#xa;    &quot;Australia&quot;,&#xa;    &quot;Austria&quot; ,&#xa;    &quot;Azerbaijan&quot;,&#xa;    &quot;Bahamas&quot; ,&#xa;    &quot;Bahrain&quot; ,&#xa;    &quot;Bangladesh&quot;,&#xa;    &quot;Barbados&quot; ,&#xa;    &quot;Belarus&quot; ,&#xa;    &quot;Belgium&quot; ,&#xa;    &quot;Belize&quot; ,&#xa;    &quot;Benin&quot; ,&#xa;    &quot;Bhutan&quot; ,&#xa;    &quot;Bolivia&quot; ,&#xa;    &quot;Bosnia and Herzegovina&quot; ,&#xa;    &quot;Botswana&quot; ,&#xa;    &quot;Brazil&quot; ,&#xa;    &quot;Brunei&quot; ,&#xa;    &quot;Bulgaria&quot; ,&#xa;    &quot;Burkina Faso&quot; ,&#xa;    &quot;Burma&quot; ,&#xa;    &quot;Burundi&quot; ,&#xa;    &quot;Cabo Verde&quot; ,&#xa;    &quot;Cambodia&quot; ,&#xa;    &quot;Cameroon&quot; ,&#xa;    &quot;Canada&quot; ,&#xa;    &quot;Central African Republic&quot; ,&#xa;    &quot;Chad&quot; ,&#xa;    &quot;Chile&quot; ,&#xa;    &quot;China&quot; ,&#xa;    &quot;Colombia&quot; ,&#xa;    &quot;Congo (Brazzaville)&quot; ,&#xa;    &quot;Congo (Kinshasa)&quot; ,&#xa;    &quot;Costa Rica&quot; ,&#xa;    &quot;Cote d&apos;Ivoire&quot;,&#xa;    &quot;Croatia&quot;,&#xa;    &quot;Cuba&quot; ,&#xa;    &quot;Cyprus&quot; ,&#xa;    &quot;Czechia&quot; ,&#xa;    &quot;Denmark&quot; ,&#xa;    &quot;Diamond Princess&quot; ,&#xa;    &quot;Djibouti&quot; ,&#xa;    &quot;Dominica&quot; ,&#xa;    &quot;Dominican Republic&quot; ,&#xa;    &quot;Ecuador&quot; ,&#xa;    &quot;Egypt&quot; ,    &quot;El Salvador&quot; ,&#xa;    &quot;Equatorial Guinea&quot; ,&#xa;    &quot;Eritrea&quot; ,&#xa;    &quot;Estonia&quot; ,&#xa;    &quot;Eswatini&quot; ,    &quot;Ethiopia&quot; ,&#xa;    &quot;Fiji&quot; ,&#xa;    &quot;Finland&quot; ,&#xa;    &quot;France&quot; ,&#xa;    &quot;Gabon&quot; ,&#xa;    &quot;Gambia&quot; ,&#xa;    &quot;Georgia&quot; ,&#xa;    &quot;Germany&quot; ,&#xa;    &quot;Ghana&quot; ,&#xa;    &quot;Greece&quot; ,&#xa;    &quot;Grenada&quot; ,&#xa;    &quot;Guatemala&quot; ,&#xa;    &quot;Guinea&quot; ,&#xa;    &quot;Guinea-Bissau&quot; ,&#xa;    &quot;Guyana&quot; ,    &quot;Haiti&quot; ,&#xa;    &quot;Holy See&quot; ,&#xa;    &quot;Honduras&quot; ,&#xa;    &quot;Hungary&quot; ,    &quot;Iceland&quot; ,&#xa;    &quot;India&quot; ,&#xa;    &quot;Indonesia&quot; ,&#xa;    &quot;Iran&quot; ,    &quot;Iraq&quot; ,    &quot;Ireland&quot; ,    &quot;Israel&quot; ,&#xa;    &quot;Italy&quot; ,&#xa;    &quot;Jamaica&quot; ,&#xa;    &quot;Japan&quot; ,&#xa;    &quot;Jordan&quot; ,&#xa;    &quot;Kazakhstan&quot; ,&#xa;    &quot;Kenya&quot; ,&#xa;    &quot;Korea, South&quot; ,&#xa;    &quot;Kosovo&quot; ,&#xa;    &quot;Kuwait&quot; ,&#xa;    &quot;Kyrgyzstan&quot; ,&#xa;    &quot;Laos&quot; ,    &quot;Latvia&quot; ,&#xa;    &quot;Lebanon&quot; ,&#xa;    &quot;Liberia&quot; ,&#xa;    &quot;Libya&quot; +&#xa;    &quot;Liechtenstein&quot; ,&#xa;    &quot;Lithuania&quot; ,&#xa;    &quot;Luxembourg&quot; ,&#xa;    &quot;Madagascar&quot; ,&#xa;    &quot;Malawi&quot; ,&#xa;    &quot;Malaysia&quot; ,&#xa;    &quot;Maldives&quot; ,&#xa;    &quot;Mali&quot; ,    &quot;Malta&quot; ,&#xa;    &quot;Mauritania&quot; ,&#xa;    &quot;Mauritius&quot; ,&#xa;    &quot;Mexico&quot; ,&#xa;    &quot;Moldova&quot; ,    &quot;Monaco&quot; ,    &quot;Mongolia&quot; ,&#xa;    &quot;Montenegro&quot; ,&#xa;    &quot;Morocco&quot; ,&#xa;    &quot;Mozambique&quot; ,&#xa;    &quot;MS Zaandam&quot; ,&#xa;    &quot;Namibia&quot; ,&#xa;    &quot;Nepal&quot; ,&#xa;    &quot;Netherlands&quot; ,&#xa;    &quot;New Zealand&quot; ,&#xa;    &quot;Nicaragua&quot; ,&#xa;    &quot;Niger&quot; ,&#xa;    &quot;Nigeria&quot; ,&#xa;    &quot;North Macedonia&quot; ,&#xa;    &quot;Norway&quot; ,    &quot;Oman&quot; ,&#xa;    &quot;Pakistan&quot; ,&#xa;    &quot;Panama&quot; ,    &quot;Papua New Guinea&quot; ,&#xa;    &quot;Paraguay&quot; ,&#xa;    &quot;Peru&quot; ,    &quot;Philippines&quot; ,    &quot;Poland&quot; ,&#xa;    &quot;Portugal&quot; ,&#xa;    &quot;Qatar&quot; ,&#xa;    &quot;Romania&quot; ,&#xa;    &quot;Russia&quot; ,&#xa;    &quot;Rwanda&quot; ,&#xa;    &quot;Saint Kitts and Nevis&quot; ,&#xa;    &quot;Saint Lucia&quot; ,&#xa;    &quot;Saint Vincent and the Grenadines&quot; ,&#xa;    &quot;San Marino&quot; ,&#xa;    &quot;Sao Tome and Principe&quot; ,&#xa;    &quot;Saudi Arabia&quot; ,&#xa;    &quot;Senegal&quot; ,&#xa;    &quot;Serbia&quot; ,&#xa;    &quot;Seychelles&quot; ,&#xa;    &quot;Sierra Leone&quot; ,&#xa;    &quot;Singapore&quot; ,&#xa;    &quot;Slovenia&quot; ,&#xa;    &quot;Somalia&quot; ,    &quot;South Africa&quot; ,&#xa;    &quot;South Sudan&quot; ,&#xa;    &quot;Spain&quot; ,&#xa;    &quot;Sri Lanka&quot; ,&#xa;    &quot;Sudan&quot; ,    &quot;Suriname&quot; ,&#xa;    &quot;Sweden&quot; ,&#xa;    &quot;Switzerland&quot; ,&#xa;    &quot;Syria&quot; ,&#xa;    &quot;Taiwan*&quot; ,    &quot;Tanzania&quot; ,&#xa;    &quot;Thailand&quot; ,&#xa;    &quot;Timor-Leste&quot; ,&#xa;    &quot;Togo&quot; ,&#xa;    &quot;Trinidad and Tobago&quot; ,&#xa;    &quot;Tunisia&quot; ,&#xa;    &quot;Turkey&quot; ,&#xa;    &quot;Uganda&quot; ,&#xa;    &quot;Ukraine&quot; ,&#xa;    &quot;United Arab Emirates&quot; ,&#xa;    &quot;United Kingdom&quot; ,&#xa;    &quot;Uruguay&quot; ,&#xa;    &quot;US&quot; ,&#xa;    &quot;Uzbekistan&quot; ,&#xa;    &quot;Venezuela&quot; ,&#xa;    &quot;Vietnam&quot; ,&#xa;    &quot;West Bank and Gaza&quot; ,&#xa;    &quot;Western Sahara&quot; ,&#xa;    &quot;Yemen&quot; ,&#xa;    &quot;Zambia&quot;,&#xa;    &quot;Zimbabwe&quot;})" type="code"/>
         </Property>
@@ -123,6 +145,12 @@
     </Component>
     <Component class="javax.swing.JButton" name="submitButton">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="99" red="0" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Submit"/>
       </Properties>
       <Events>
@@ -139,6 +167,9 @@
         <Component class="javax.swing.JTextArea" name="outputText">
           <Properties>
             <Property name="columns" type="int" value="20"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Times New Roman" size="14" style="0"/>
+            </Property>
             <Property name="rows" type="int" value="5"/>
           </Properties>
         </Component>
@@ -146,6 +177,9 @@
     </Container>
     <Component class="javax.swing.JComboBox" name="dateCombo">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="12" style="0"/>
+        </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
           <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;&quot;, &quot;1/22/2020&quot;, &quot;1/23/2020&quot;, &quot;1/24/2020&quot;, &quot;1/25/2020&quot;, &quot;1/26/2020&quot;, &quot;1/27/2020&quot;, &quot;1/28/2020&quot;, &quot;1/29/2020&quot;, &quot;1/30/2020&quot;, &quot;1/31/2020&quot;, &quot;2/1/2020&quot;, &quot;2/2/2020&quot;, &quot;2/3/2020&quot;, &quot;2/4/2020&quot;, &quot;2/5/2020&quot;, &quot;2/6/2020&quot;, &quot;2/7/2020&quot;, &quot;2/8/2020&quot;, &quot;2/9/2020&quot;, &quot;2/10/2020&quot;, &quot;2/11/2020&quot;, &quot;2/12/2020&quot;, &quot;2/13/2020&quot;, &quot;2/14/2020&quot;, &quot;2/15/2020&quot;, &quot;2/16/2020&quot;, &quot;2/17/2020&quot;, &quot;2/18/2020&quot;, &quot;2/19/2020&quot;, &quot;2/20/2020&quot;, &quot;2/21/2020&quot;, &quot;2/22/2020&quot;, &quot;2/23/2020&quot;, &quot;2/24/2020&quot;&#xa;, &quot;2/25/2020&quot;, &quot;2/26/2020&quot;, &quot;2/27/2020&quot;, &quot;2/28/2020&quot;, &quot;2/29/2020&quot;, &quot;3/1/2020&quot;, &quot;3/2/2020&quot;&#xa;, &quot;3/3/2020&quot;, &quot;3/4/2020&quot;, &quot;3/5/2020&quot;, &quot;3/6/2020&quot;, &quot;3/7/2020&quot;, &quot;3/8/2020&quot;, &quot;3/9/2020&quot;, &quot;3/10/2020&quot;, &quot;3/11/2020&quot;, &quot;3/12/2020&quot;, &quot;3/13/2020&quot;, &quot;3/14/2020&quot;, &quot;3/15/2020&quot;, &quot;3/16/2020&quot;, &quot;3/17/2020&quot;, &quot;3/18/2020&quot;, &quot;3/19/2020&quot;, &quot;3/20/2020&quot;, &quot;3/21/2020&quot;, &quot;3/22/2020&quot;, &quot;3/23/2020&quot;, &quot;3/24/2020&quot;, &quot;3/25/2020&quot;, &quot;3/26/2020&quot;, &quot;3/27/2020&quot;, &quot;3/28/2020&quot;, &quot;3/29/2020&quot;, &quot;3/30/2020&quot;, &quot;3/31/2020&quot;&#xa;, &quot;4/1/2020&quot;, &quot;4/2/2020&quot;, &quot;4/3/2020&quot;, &quot;4/4/2020&quot;, &quot;4/5/2020&quot;, &quot;4/6/2020&quot;, &quot;4/7/2020&quot;, &quot;4/8/2020&quot;, &quot;4/9/2020&quot;, &quot;4/10/2020&quot;, &quot;4/11/2020&quot;, &quot;4/12/2020&quot;, &quot;4/13/2020&quot;, &quot;4/14/2020&quot;, &quot;4/15/2020&quot;, &quot;4/16/2020&quot;, &quot;4/17/2020&quot;, &quot;4/18/2020&quot;, &quot;4/19/2020&quot;, &quot;4/20/2020&quot; })" type="code"/>
         </Property>
@@ -156,21 +190,44 @@
     </Component>
     <Component class="javax.swing.JLabel" name="dateLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Date"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="countryLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Country"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="clearButton">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="33" red="cc" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="12" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Clear"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clearButtonActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="headingLabel">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Times New Roman" size="36" style="0"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="COVID-19"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
