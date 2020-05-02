@@ -40,10 +40,13 @@ public class GUIDesign1 extends javax.swing.JFrame {
         dateLabel = new javax.swing.JLabel();
         countryLabel = new javax.swing.JLabel();
         clearButton = new javax.swing.JButton();
+        headingLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("COVID-19");
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
+        fatalityRadio.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         fatalityRadio.setText("Fatality Rate");
         fatalityRadio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -51,6 +54,7 @@ public class GUIDesign1 extends javax.swing.JFrame {
             }
         });
 
+        growthRadio.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         growthRadio.setText("Growth Rate");
         growthRadio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,6 +62,7 @@ public class GUIDesign1 extends javax.swing.JFrame {
             }
         });
 
+        countryCombo.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         countryCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "",
             "Afghanistan" ,
             "Albania" ,
@@ -226,6 +231,8 @@ public class GUIDesign1 extends javax.swing.JFrame {
             "Zambia",
             "Zimbabwe"}));
 
+submitButton.setBackground(new java.awt.Color(0, 153, 51));
+submitButton.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
 submitButton.setText("Submit");
 submitButton.addActionListener(new java.awt.event.ActionListener() {
     public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -234,18 +241,24 @@ submitButton.addActionListener(new java.awt.event.ActionListener() {
     });
 
     outputText.setColumns(20);
+    outputText.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
     outputText.setRows(5);
     jScrollPane1.setViewportView(outputText);
 
+    dateCombo.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
     dateCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "1/22/2020", "1/23/2020", "1/24/2020", "1/25/2020", "1/26/2020", "1/27/2020", "1/28/2020", "1/29/2020", "1/30/2020", "1/31/2020", "2/1/2020", "2/2/2020", "2/3/2020", "2/4/2020", "2/5/2020", "2/6/2020", "2/7/2020", "2/8/2020", "2/9/2020", "2/10/2020", "2/11/2020", "2/12/2020", "2/13/2020", "2/14/2020", "2/15/2020", "2/16/2020", "2/17/2020", "2/18/2020", "2/19/2020", "2/20/2020", "2/21/2020", "2/22/2020", "2/23/2020", "2/24/2020"
         , "2/25/2020", "2/26/2020", "2/27/2020", "2/28/2020", "2/29/2020", "3/1/2020", "3/2/2020"
         , "3/3/2020", "3/4/2020", "3/5/2020", "3/6/2020", "3/7/2020", "3/8/2020", "3/9/2020", "3/10/2020", "3/11/2020", "3/12/2020", "3/13/2020", "3/14/2020", "3/15/2020", "3/16/2020", "3/17/2020", "3/18/2020", "3/19/2020", "3/20/2020", "3/21/2020", "3/22/2020", "3/23/2020", "3/24/2020", "3/25/2020", "3/26/2020", "3/27/2020", "3/28/2020", "3/29/2020", "3/30/2020", "3/31/2020"
         , "4/1/2020", "4/2/2020", "4/3/2020", "4/4/2020", "4/5/2020", "4/6/2020", "4/7/2020", "4/8/2020", "4/9/2020", "4/10/2020", "4/11/2020", "4/12/2020", "4/13/2020", "4/14/2020", "4/15/2020", "4/16/2020", "4/17/2020", "4/18/2020", "4/19/2020", "4/20/2020" }));
 
+dateLabel.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
 dateLabel.setText("Date");
 
+countryLabel.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
 countryLabel.setText("Country");
 
+clearButton.setBackground(new java.awt.Color(204, 51, 0));
+clearButton.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
 clearButton.setText("Clear");
 clearButton.addActionListener(new java.awt.event.ActionListener() {
 public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -253,45 +266,54 @@ public void actionPerformed(java.awt.event.ActionEvent evt) {
     }
     });
 
+    headingLabel.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
+    headingLabel.setForeground(new java.awt.Color(255, 0, 0));
+    headingLabel.setText("COVID-19");
+
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
     layout.setHorizontalGroup(
         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-            .addGap(151, 151, 151)
-            .addComponent(dateLabel)
-            .addGap(148, 148, 148)
-            .addComponent(countryLabel)
-            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         .addGroup(layout.createSequentialGroup()
             .addGap(16, 16, 16)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane1)
-                        .addComponent(growthRadio))
+                    .addComponent(jScrollPane1)
                     .addContainerGap())
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(105, 105, 105)
-                    .addComponent(dateCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(18, 18, 18)
-                    .addComponent(countryCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 104, Short.MAX_VALUE))
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(fatalityRadio)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(18, 18, 18)
                     .addComponent(clearButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(11, 11, 11))))
+                    .addGap(11, 11, 11))
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(growthRadio)
+                    .addGap(18, 18, 18)
+                    .addComponent(dateCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(18, 18, 18)
+                    .addComponent(countryCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(146, Short.MAX_VALUE))))
+        .addGroup(layout.createSequentialGroup()
+            .addGap(169, 169, 169)
+            .addComponent(dateLabel)
+            .addGap(127, 127, 127)
+            .addComponent(countryLabel)
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(headingLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(207, 207, 207))
     );
     layout.setVerticalGroup(
         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(layout.createSequentialGroup()
-            .addContainerGap(16, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(countryLabel)
-                .addComponent(dateLabel))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(headingLabel)
+            .addGap(18, 18, 18)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(dateLabel)
+                .addComponent(countryLabel))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(23, 23, 23)
@@ -337,8 +359,8 @@ public void actionPerformed(java.awt.event.ActionEvent evt) {
                 String output = DBInteract.getCountryGrowthRate(dateSelected, countrySelected);
                 String output2 = DBInteract.getWorldGrowthRate(dateSelected);
                 //sets the text to the values calculated in DBInteract
-                outputText.setText("The country COVID-19 growth rate from previous day is: "+ output + "%" 
-                        + "\nThe world COVID-19 growth rate from previous day is: " + output2 + "%");
+                outputText.setText("The Country COVID-19 growth rate from previous day is: "+ output + "%" 
+                        + "\n\n\nThe World COVID-19 growth rate from previous day is: " + output2 + "%");
             }
         }    
         else if (fatalityRadio.isSelected() == true){
@@ -350,8 +372,8 @@ public void actionPerformed(java.awt.event.ActionEvent evt) {
                 String output = DBInteract.getCountryDeathRate(dateSelected, countrySelected);
                 String output2 = DBInteract.getWorldDeathRate(dateSelected);
                 //sets the text to the values calculated in DBInteract
-                outputText.setText("The country COVID-19 increase in deaths from previous day is: "+ output + "%" 
-                        + "\nThe world COVID-19 increase in deaths from previous day is: " + output2 + "%");
+                outputText.setText("The Country COVID-19 increase in deaths from previous day is: "+ output + "%" 
+                        + "\n\n\nThe World COVID-19 increase in deaths from previous day is: " + output2 + "%");
             }      
         }
         else{
@@ -408,6 +430,7 @@ public void actionPerformed(java.awt.event.ActionEvent evt) {
     private javax.swing.JLabel dateLabel;
     private javax.swing.JRadioButton fatalityRadio;
     private javax.swing.JRadioButton growthRadio;
+    private javax.swing.JLabel headingLabel;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea outputText;
     private javax.swing.JButton submitButton;
