@@ -24,17 +24,18 @@
         }
         .back {
             width: 20%;
-            float: left;
+            float: right;
             padding-right: 10px;           
         }
         .results {
             width: 100%;
             text-align: center;
             font-size: 75%;
+            padding-top: 15px;
         }
         .redText {
             color: firebrick;
-            font-size: 110%;
+            font-size: 115%;
         }
     </style>
     <head>
@@ -54,10 +55,10 @@
         
         <div class='results'>
             <h3>
-                The World's [insert rate variable] is <span class='redText'>[insert rate value]%</span> on [date].
+                The World [insert rate variable] is <span class='redText'>[insert rate value]%</span> on [date].
             </h3>
             <h3>
-                [country]'s [rate variable] is <span class='redText'>[rate value]%</span> on [date].
+                The [country] [rate variable] is <span class='redText'>[rate value]%</span> on [date].
             </h3>
         </div>
         <div class='back'>
