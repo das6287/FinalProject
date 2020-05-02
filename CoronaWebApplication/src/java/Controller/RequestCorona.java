@@ -49,8 +49,12 @@ public class RequestCorona extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
         
+        new DBInteract();
+        
+        //Reintializes url to jsp url
         String url = "/corona.jsp";
         
+        //Gets paramter values from index.html
         String rate = request.getParameter("Rate");
         String date = request.getParameter("Date");
         String country = request.getParameter("Country");
@@ -60,17 +64,18 @@ public class RequestCorona extends HttpServlet {
        
         if("Infection Rate".equals(rate)) {
             //Gets the world growth rate from the database
-            DBInteract.getWorldGrowthRate(date);
-            //Gets the growth rate by country
-            DBInteract.getCountryGrowthRate(date, country);
+            System.out.println(DBInteract.getWorldGrowthRate(date));
+            //Gets the growth rate by country from the database
+            System.out.println(DBInteract.getCountryGrowthRate(date, country));          
         }
         if("Fatality Rate".equals(rate)) {
             //Gets the world death rate from the database
-            DBInteract.getWorldDeathRate(date);
-            //Gets the death rate by country
-            DBInteract.getCountryDeathRate(date, country);    
+            System.out.println(DBInteract.getWorldDeathRate(date));
+            //Gets the death rate by country from the database
+            System.out.println(DBInteract.getCountryDeathRate(date, country));            
         }
-   
+        
+        //Forward request and response objects to specified URL
         getServletContext() 
             .getRequestDispatcher(url)
             .forward(request, response);      
@@ -88,8 +93,7 @@ public class RequestCorona extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        
-
+        //doGet(request, response);
     }
 
     
