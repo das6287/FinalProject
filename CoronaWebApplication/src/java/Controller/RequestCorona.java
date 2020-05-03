@@ -49,7 +49,8 @@ public class RequestCorona extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
         
-        /*new DBInteract();*/
+        String data1 = null;
+        String data2 = null;
         
         //Reintializes url to jsp url
         String url = "/corona.jsp";
@@ -58,31 +59,38 @@ public class RequestCorona extends HttpServlet {
         String rate = request.getParameter("Rate");
         String date = request.getParameter("Date");
         String country = request.getParameter("Country");
-        
-        System.out.println("The "+rate+" from "
+        // -TESTING ONLY-->
+        System.out.println("The "+rate+" in "
         +country+" on "+date+" is: ");
-       
+        // <--TESTING ONLY-
         if("Infection Rate".equals(rate)) {
             //Gets the world growth rate from the database
-            String data1 = DBInteract.getWorldGrowthRate(date);
+            data1 = DBInteract.getWorldGrowthRate(date);
             System.out.println(data1);
             //Gets the growth rate by country from the database
-            String data2 = DBInteract.getCountryGrowthRate(date, country);
-            System.out.println(data2);          
+            data2 = DBInteract.getCountryGrowthRate(date, country);
+            System.out.println(data2);     
         }
         if("Fatality Rate".equals(rate)) {
             //Gets the world death rate from the database
-            String data3 = DBInteract.getWorldDeathRate(date);
-            System.out.println(data3);
+            data1 = DBInteract.getWorldDeathRate(date);
+            System.out.println(data1);
             //Gets the death rate by country from the database
-            String data4 = DBInteract.getCountryDeathRate(date, country);
-            System.out.println(data4);            
+            data2 = DBInteract.getCountryDeathRate(date, country);
+            System.out.println(data2);    
         }
         
-        //Forward request and response objects to specified URL
+        //Sets attribute values in jsp
+        request.setAttribute("coronaData", data1);
+        request.setAttribute("coronaData", data2);
+        request.setAttribute("date", date);
+        request.setAttribute("country", country);
+        request.setAttribute("rate", rate);
+        
+        //Forward request and response objects to jsp
         getServletContext() 
             .getRequestDispatcher(url)
-            .forward(request, response);      
+            .forward(request, response);
     }
 
     /**
