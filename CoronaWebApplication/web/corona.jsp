@@ -23,9 +23,10 @@
             background-color: whitesmoke;
         }
         .back {
-            width: 20%;
+            width: 25%;
             float: right;
-            padding-right: 10px;           
+            padding-right: 30px; 
+            padding-top: 5px;
         }
         .results {
             width: 100%;
