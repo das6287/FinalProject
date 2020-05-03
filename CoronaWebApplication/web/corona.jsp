@@ -30,17 +30,16 @@
         .results {
             width: 100%;
             text-align: center;
-            font-size: 75%;
+            font-size: 90%;
             padding-top: 15px;
         }
         .redText {
             color: firebrick;
-            font-size: 115%;
+            font-size: 120%;
         }
     </style>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta http-equiv="Refresh" content="10">
         <title>Coronavirus Info</title>
     </head>
     <body>
@@ -55,10 +54,10 @@
         
         <div class='results'>
             <h3>
-                The World [insert rate variable] is <span class='redText'>[insert rate value]%</span> on [date].
+                The World ${rate} is <span class='redText'>${data1}%</span> on ${date}.
             </h3>
             <h3>
-                The [country] [rate variable] is <span class='redText'>[rate value]%</span> on [date].
+                The ${country} ${rate} is <span class='redText'>${data2}%</span> on ${date}.
             </h3>
         </div>
         <div class='back'>
