@@ -1,14 +1,13 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * CompSci 221 Final Project
+ * GUIDesign1.java
+ * Purpose: To calculate rates and display them to the user.
+ * 
+ * @version 2.3 5/4/2020
+ * @author Daniel Stayer
  */
 package GUI;
 
-/**
- *
- * @author das6287
- */
 import Model.DBInteract;
 
 public class GUIDesign1 extends javax.swing.JFrame {
@@ -351,7 +350,9 @@ public void actionPerformed(java.awt.event.ActionEvent evt) {
         String dateSelected = dateCombo.getSelectedItem().toString();
         String countrySelected = countryCombo.getSelectedItem().toString();
         
+        //checks to see if a radio button is selected
         if (growthRadio.isSelected() == true){
+            //checks if an option in the combo box is selected
             if ("".equals(countrySelected) || "".equals(dateSelected)){
               outputText.setText("One or more choices is not selected. Try again");
             }
@@ -383,6 +384,7 @@ public void actionPerformed(java.awt.event.ActionEvent evt) {
     }//GEN-LAST:event_submitButtonActionPerformed
 
     private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
+        //clears all of the selected information and what is in the text box
         growthRadio.setSelected(false);
         fatalityRadio.setSelected(false);
         outputText.setText("");

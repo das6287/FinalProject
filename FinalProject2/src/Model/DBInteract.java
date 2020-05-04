@@ -6,8 +6,12 @@ import java.sql.*;
 import java.lang.Math;
 
 /**
- *
+ * Interacts with the database, gets data from CoronaDB and makes calculations 
+ * with it
+ * 
  * @author Joshua Haines
+ * @version 1.5
+ * @date 5/5/19
  */
 public class DBInteract {
 
