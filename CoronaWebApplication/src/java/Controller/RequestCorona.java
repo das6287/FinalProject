@@ -53,7 +53,8 @@ public class RequestCorona extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
         
-        String data1 = null;
+        //Database data variables
+        String data1 = null;        
         String data2 = null;
         
         //Reintializes url to jsp url
@@ -72,10 +73,10 @@ public class RequestCorona extends HttpServlet {
         if("Growth Rate".equals(rate)) {
             //Gets the world growth rate from the database
             data1 = DBInteract.getWorldGrowthRate(date);
-            System.out.println(data1);
+            //System.out.println(data1);    //TESTING
             //Gets the growth rate by country from the database
             data2 = DBInteract.getCountryGrowthRate(date, country);
-            System.out.println(data2);     
+            //System.out.println(data2);    //TESTING     
         }
         if("Fatality Rate".equals(rate)) {
             //Gets the world death rate from the database
