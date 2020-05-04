@@ -55,6 +55,8 @@ public class RequestCorona extends HttpServlet {
         //Reintializes url to jsp url
         String url = "/corona.jsp";
         
+        new DBInteract();
+        
         //Gets paramter values from index.html
         String rate = request.getParameter("Rate");
         String date = request.getParameter("Date");
