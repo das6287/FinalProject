@@ -83,8 +83,8 @@ public class RequestCorona extends HttpServlet {
         }
         
         //Sets attribute values in jsp
-        request.setAttribute("coronaData", data1);
-        request.setAttribute("coronaData", data2);
+        request.setAttribute("data1", data1);
+        request.setAttribute("data2", data2);
         request.setAttribute("date", date);
         request.setAttribute("country", country);
         request.setAttribute("rate", rate);
