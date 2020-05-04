@@ -267,7 +267,7 @@ public void actionPerformed(java.awt.event.ActionEvent evt) {
     });
 
     headingLabel.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
-    headingLabel.setForeground(new java.awt.Color(255, 0, 0));
+    headingLabel.setForeground(new java.awt.Color(178, 34, 34));
     headingLabel.setText("COVID-19");
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -359,7 +359,7 @@ public void actionPerformed(java.awt.event.ActionEvent evt) {
                 String output = DBInteract.getCountryGrowthRate(dateSelected, countrySelected);
                 String output2 = DBInteract.getWorldGrowthRate(dateSelected);
                 //sets the text to the values calculated in DBInteract
-                outputText.setText("The Country COVID-19 growth rate from previous day is: "+ output + "%" 
+                outputText.setText(countrySelected + "'s COVID-19 growth rate from previous day is: "+ output + "%" 
                         + "\n\n\nThe World COVID-19 growth rate from previous day is: " + output2 + "%");
             }
         }    
@@ -372,7 +372,7 @@ public void actionPerformed(java.awt.event.ActionEvent evt) {
                 String output = DBInteract.getCountryDeathRate(dateSelected, countrySelected);
                 String output2 = DBInteract.getWorldDeathRate(dateSelected);
                 //sets the text to the values calculated in DBInteract
-                outputText.setText("The Country COVID-19 increase in deaths from previous day is: "+ output + "%" 
+                outputText.setText(countrySelected + "'s COVID-19 increase in deaths from previous day is: "+ output + "%" 
                         + "\n\n\nThe World COVID-19 increase in deaths from previous day is: " + output2 + "%");
             }      
         }
