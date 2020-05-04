@@ -1,9 +1,13 @@
 package Controller;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * RequestCorona.java
+ * CMPSC 211
+ * Purpose: To handle user information and database information between the 
+ *          html and jsp files
+ * 
+ * @author John Dyson
+ * @version 3.2 5/4/2020
  */
 
 import Model.DBInteract;
@@ -62,10 +66,10 @@ public class RequestCorona extends HttpServlet {
         String date = request.getParameter("Date");
         String country = request.getParameter("Country");
         // -TESTING ONLY-->
-        System.out.println("The "+rate+" in "
-        +country+" on "+date+" is: ");
+        //System.out.println("The "+rate+" in "
+        //+country+" on "+date+" is: ");
         // <--TESTING ONLY-
-        if("Infection Rate".equals(rate)) {
+        if("Growth Rate".equals(rate)) {
             //Gets the world growth rate from the database
             data1 = DBInteract.getWorldGrowthRate(date);
             System.out.println(data1);
@@ -76,10 +80,10 @@ public class RequestCorona extends HttpServlet {
         if("Fatality Rate".equals(rate)) {
             //Gets the world death rate from the database
             data1 = DBInteract.getWorldDeathRate(date);
-            System.out.println(data1);
+            //System.out.println(data1);    //TESTING
             //Gets the death rate by country from the database
             data2 = DBInteract.getCountryDeathRate(date, country);
-            System.out.println(data2);    
+            //System.out.println(data2);    //TESTING
         }
         
         //Sets attribute values in jsp
