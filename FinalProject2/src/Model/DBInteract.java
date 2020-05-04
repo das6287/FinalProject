@@ -31,7 +31,7 @@ public class DBInteract {
             className = "org.apache.derby.jdbc.ClientDriver";
             //System.out.println(className);
             url = "jdbc:derby://localhost:1527/CoronaDB";
-            System.out.println(url);
+            //System.out.println(url);
             user = "app";
             password = "app";
         }
