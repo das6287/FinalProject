@@ -22,17 +22,18 @@ public class DBInteract {
             InputStream in = null;
             ResourceBundle newResources;
 
-            in = ClassLoader.getSystemResourceAsStream("db.properties");
-
+            /*in = ClassLoader.getSystemResourceAsStream("db.properties");
+            System.out.print("Test");
             resources = new PropertyResourceBundle(in);
 
-            in.close();
+            in.close(); */
 
-            className = resources.getString("jdbc.driver");
-            url = resources.getString("jdbc.url");
+            className = "org.apache.derby.jdbc.ClientDriver";
+            //System.out.println(className);
+            url = "jdbc:derby://localhost:1527/CoronaDB";
             System.out.println(url);
-            user = resources.getString("jdbc.user");
-            password = resources.getString("jdbc.password");
+            user = "app";
+            password = "app";
         }
         catch (Exception exp) {
             System.out.println("Couldn't load resources." + exp);
