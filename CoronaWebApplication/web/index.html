@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
+index.html
+CMPSC 221
+Purpose: To take specified user input and send it to the controller to be handled
+
+@author John Dyson
+@version 2.6 5/4/2020
 -->
 <html>
     <style>
@@ -11,13 +14,15 @@ and open the template in the editor.
         }
         h1 {
             color: firebrick;
-            font-size: 230%;
+            font-size: 235%;
             text-align: center;
+            font-family: timesnewroman;
         }
         h2 {
             color: black;
             font-size: 110%;
             text-align: center;
+            font-family: timesnewroman;
         }
         body {
             background-color: whitesmoke;
@@ -26,7 +31,13 @@ and open the template in the editor.
             width: 55%;
             
         }
-        th, td {
+        th {
+            text-align: center;
+            padding-bottom: 5px;
+            padding-left: 10px; 
+            font-size: 115%;
+        }
+        td {
             text-align: center;
             padding-bottom: 5px;
             padding-left: 10px;
@@ -49,6 +60,23 @@ and open the template in the editor.
         }
         li {
             padding: 5px;
+            font-size: 115%;
+        }
+        .submit {
+            background-color: rgb(0, 153, 51); 
+            border-color: gray; 
+            border-radius: 12px;  
+            font-family: timesnewroman;
+            font-size: 105%;
+            width: 15%
+        }
+        .clear {
+            background-color: rgb(204, 51, 0); 
+            border-color: gray; 
+            border-radius: 12px; 
+            font-family: timesnewroman;
+            font-size: 105%;
+            width: 15%
         }
     </style>
     <head>
@@ -86,7 +114,7 @@ and open the template in the editor.
                 <tbody>
                     <tr>
                         <td>
-                            <select name="Date" required>
+                            <select name="Date" required style="font-family: timesnewroman; font-size: 102%">
                                 <option value="" disabled selected hidden>-Select Option-</option>
                                 <option>1/22/2020</option>
                                 <option>1/23/2020</option>
@@ -194,7 +222,7 @@ and open the template in the editor.
                             </select>
                         </td>
                         <td>
-                            <select name="Country" required>
+                            <select name="Country" required style="font-family: timesnewroman; font-size: 102%">
                                 <option value="" disabled selected hidden>-Select Option-</option>
                                 <option>Afghanistan</option>
                                 <option>Albania</option>
@@ -386,8 +414,8 @@ and open the template in the editor.
             </table><br>
         </div>
         <div class="buttons">    
-            <input type="submit" value="Search" name="Search Button" />
-            <input type="reset" value="Clear" name="Clear Button" />
+            <input type="submit" value="Search" name="Search Button" class="submit" />
+            <input type="reset" value="Clear" name="Clear Button" class="clear" >
         </div>
         </form>
     </body>
