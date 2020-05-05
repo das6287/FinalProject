@@ -1,0 +1,26 @@
+Test cases
+
+1. Getting worldwide cases for 4/15/2020 
+	getWorldData("4/15/2020",0) should return 2056054
+	output: 2056054
+2. Getting worldwide deaths for 4/15/2020
+	getWorldData("4/15/2020",1) should return 511019
+	output: 511019
+3. Getting percentage growth rate of cases from previous day on 4/15/2020 worldwide
+	getWorldGrowthRate("4/15/2020") should return 4.041
+	output: 4.041
+4. Getting worldwide cases for 1/1/2020
+	getWorldData("1/1/2020", 0) should print that date is not found and return -1
+	output: -1
+5. Getting US cases for 4/15/2020
+	getCountryData("4/15/2020", "US", 0) should return 636350
+	output: 636350
+6. Getting percentage growth rate of cases from previous day on 1/23/2020 in China
+	getCountryGrowthRate("1/23/2020", "China") should return 17.336
+	output: 17.336
+7. Getting percentage growth rate of deaths from previous day on 4/15/2020 worldwide
+	getWorldDeathRate("4/15/2020") should return 6.503
+	output: 6.503
+8. Getting percentage growth rate of deaths from previous day on 4/1/2020 in US
+	getCountryDeathRate("4/1/2020","US") should return 22.825
+	output: 22.825
