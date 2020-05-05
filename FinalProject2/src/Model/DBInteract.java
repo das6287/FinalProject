@@ -26,16 +26,8 @@ public class DBInteract {
             InputStream in = null;
             ResourceBundle newResources;
 
-            /*in = ClassLoader.getSystemResourceAsStream("db.properties");
-            System.out.print("Test");
-            resources = new PropertyResourceBundle(in);
-
-            in.close(); */
-
             className = "org.apache.derby.jdbc.ClientDriver";
-            //System.out.println(className);
             url = "jdbc:derby://localhost:1527/CoronaDB";
-            //System.out.println(url);
             user = "app";
             password = "app";
         }
