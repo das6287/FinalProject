@@ -1,0 +1,29 @@
+Requirements
+
+Purpose: To show the increase in coronavirus cases / deaths from day to day using inputted days, including for specific countries
+
+Class RequestCorona with GUI on a webpage
+Class GUIDesign with GUI on a Java panel
+Class DBInteract, which interacts with the database
+
+If:
+- user selects growth rate button
+- user selects date from dropdown
+- user selects country from dropdown
+
+- gets info from the database about inputted date and previous date
+- calculates percentage
+- outputs a percentage into a text box of both the growth percentage worldwide and the growth percentage in the specified country since previous day of number of cases
+	- gives details about what data is being outputted
+	- if there were no cases, state that the growth is undefined
+
+If:
+- user selects death rate button
+- user selects date from dropdown
+- user selects country from dropdown
+
+- gets info from the database about inputted date and previous date
+- calculates percentage
+- outputs a percentage into a text box of both the growth percentage worldwide and the growth percentage in the specified country since previous day of number of deaths
+	- gives details about what data is being outputted
+	- if there were no cases, state that the growth is undefined
