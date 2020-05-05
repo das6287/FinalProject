@@ -73,18 +73,14 @@ public class RequestCorona extends HttpServlet {
         if("Growth Rate".equals(rate)) {
             //Gets the world growth rate from the database
             data1 = DBInteract.getWorldGrowthRate(date);
-            //System.out.println(data1);    //TESTING
             //Gets the growth rate by country from the database
-            data2 = DBInteract.getCountryGrowthRate(date, country);
-            //System.out.println(data2);    //TESTING     
+            data2 = DBInteract.getCountryGrowthRate(date, country);   
         }
         if("Fatality Rate".equals(rate)) {
             //Gets the world death rate from the database
             data1 = DBInteract.getWorldDeathRate(date);
-            //System.out.println(data1);    //TESTING
             //Gets the death rate by country from the database
             data2 = DBInteract.getCountryDeathRate(date, country);
-            //System.out.println(data2);    //TESTING
         }
         
         //Sets attribute values in jsp
@@ -114,10 +110,4 @@ public class RequestCorona extends HttpServlet {
         processRequest(request, response);
         //doGet(request, response);
     }
-
-    
-    //public Object getServletContext() {
-    //    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    //}
-
 }
